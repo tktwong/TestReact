@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { ConsoleTime, ConsoleTimeEnd } from "./Utils"
 
 export function MessageComponent({ title }) {
 
@@ -11,8 +12,9 @@ export function MessageComponent({ title }) {
     }
 
     return (
-        <div className="App">
-            <ConsoleTime>{title} elapse time</ConsoleTime>
+        <div>
+            <ConsoleTime>{title}</ConsoleTime>
+            <h1>{title}</h1>
             <input
                 type="text"
                 value={_getLastMessage()}
@@ -20,20 +22,11 @@ export function MessageComponent({ title }) {
                 style={{ margin: "10px" }}
             />
             <MessageList messages={messages} />
-            <ConsoleTimeEnd>{title} elapse time</ConsoleTimeEnd>
+            <ConsoleTimeEnd>{title}</ConsoleTimeEnd>
         </div>
     )
 
 }
-const ConsoleTime = ({ children }) => {
-    console.time(children);
-    return false;
-};
-
-const ConsoleTimeEnd = ({ children }) => {
-    console.timeEnd(children);
-    return false;
-};
 
 const MessageList = ({ messages }) => {
     return (
