@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { ConsoleTime, ConsoleTimeEnd } from "./Utils"
 import { GlobalStore } from "./context/GlobalStore"
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles({
     table: {
@@ -70,7 +71,7 @@ export function SimpleTable({ title }) {
                                     <TableCell component="th" scope="row">
                                         {row.name}
                                     </TableCell>
-                                    <TableCell align="right">{row.calories}</TableCell>
+                                    <TableCell align="right"><TextField disabled id={Math.random() + ""} label="Disabled" defaultValue={row.calories} /></TableCell>
                                     <TableCell align="right">{row.fat}</TableCell>
                                     <TableCell align="right">{row.carbs}</TableCell>
                                     <TableCell align="right">{row.protein}</TableCell>
