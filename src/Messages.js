@@ -17,7 +17,7 @@ export function MessageComponent({ title }) {
             <h1>{title}</h1>
             <input
                 type="text"
-                value={_getLastMessage()}
+                value={_getLastMessage() || ""}
                 onChange={_onMessageChange}
                 style={{ margin: "10px" }}
             />
@@ -32,7 +32,6 @@ const MessageList = ({ messages }) => {
     return (
         <ul>
             {messages.map((m, i) => <Message key={i} message={m} />)}
-            {/* {messages.map((m, i) => <TableMessage key={i}>{m}</TableMessage>)} */}
         </ul>
     )
 }

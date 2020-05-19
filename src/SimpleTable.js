@@ -33,9 +33,10 @@ export function SimpleTable({ title }) {
 
     return (
         <>
+            <label>{title}</label>
             <input
                 type="text"
-                value={_getLastMessage()}
+                value={_getLastMessage() || ""}
                 onChange={_onMessageChange}
                 style={{ margin: "10px" }}
             />

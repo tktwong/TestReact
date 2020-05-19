@@ -7,7 +7,7 @@ import { ConsoleTime, ConsoleTimeEnd } from "./Utils"
 
 export default function App() {
   return (
-    <div className="App">
+    <div>
       <ConsoleTime>parent</ConsoleTime>
       {/* <MessageComponent title="message list 1" /> */}
       {/* <MessageComponent title="message list 2" /> */}
